@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="trackndtrigger">TRACK N\'D TRIGGER</string>
+    <string name="reg">REGISTER</string>
+    <string name="log">Already registered? LOGIN</string>
+    <string name="user_name">Username</string>
+    <string name="ph">Phone</string>
+    <string name="mail">G-mail ID</string>
+    <string name="prof">Profession</string>
+    <string name="reg_page">REGISTRATION PAGE</string>
+    <string name="next">NEXT</string>
+    <string name="pass">Password</string>
+    <string name="LOGIN">LOGIN</string>
+    <string name="logpage">LOGIN PAGE</string>
+    <string name="verify_num">VERIFY PHONE NUMBER</string>
+    <string name="verify_sign_in"><![CDATA[Verify & Sign-in]]></string>
+    <string name="otp">ENTER OTP</string>
+    <string name="logout">LOG OUT</string>
+</resources>

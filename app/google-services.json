@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "871849141705",
+    "firebase_url": "https://track-and-trigger-5dbea.firebaseio.com",
+    "project_id": "track-and-trigger-5dbea",
+    "storage_bucket": "track-and-trigger-5dbea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871849141705:android:8c69c6e4404c98177f7418",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871849141705-4v924la1e8v4dcugnj3ahle1rt4qps6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt-t_NX9cQ1rl1t1GM9zciKabkwAEaF2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871849141705-4v924la1e8v4dcugnj3ahle1rt4qps6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
