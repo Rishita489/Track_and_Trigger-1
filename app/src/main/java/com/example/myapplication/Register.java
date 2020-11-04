@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity {
     EditText reg_username , reg_password,reg_phone,reg_email,reg_profession;
@@ -49,9 +50,14 @@ public class Register extends AppCompatActivity {
         nxt_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String username = reg_username.getText().toString().trim();
                 String email = reg_email.getText().toString().trim();
                 String password = reg_password.getText().toString().trim();
                 final String phone = "+91" + reg_phone.getText().toString().trim();
+                if((!Pattern.matches("^[A-Za-z]\\w{1,29}$",username))||TextUtils.isEmpty(username)){
+                    reg_username.setError("Enter Valid Username!");
+                    return;
+                }
                 if(TextUtils.isEmpty(email)){
                     reg_email.setError("Email field is required!");
                     return;
@@ -67,7 +73,16 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Register.this,"User Registered!",Toast.LENGTH_SHORT).show();
+                            Objects.requireNonNull(fAuth.getCurrentUser()).sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Toast.makeText(Register.this,"User Registered! Verification email sent!",Toast.LENGTH_SHORT).show();
+
+
+
+                                }
+                            });
+
                             String name = reg_username.getText().toString().trim();
                             String email = reg_email.getText().toString().trim();
                             String ph = reg_phone.getText().toString().trim();

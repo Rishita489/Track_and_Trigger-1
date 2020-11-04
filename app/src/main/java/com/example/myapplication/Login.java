@@ -54,9 +54,15 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(new Intent(Login.this,Dashboard.class) );
+                            if(fAuth.getCurrentUser().isEmailVerified()){
+                                startActivity(new Intent(Login.this,Dashboard.class) );
+                            }
+                            else{
+                                Toast.makeText(Login.this,"Please Verify email to login.",Toast.LENGTH_LONG).show();
+
+                            }
                         }else{
-                            Toast.makeText(Login.this,"Error!"+ Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"Error!"+ Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_LONG).show();
                             pb.setVisibility(View.GONE);
                         }
                     }

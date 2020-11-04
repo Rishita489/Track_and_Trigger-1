@@ -14,7 +14,7 @@
         android:background="@drawable/border"
         android:ems="10"
         android:fontFamily="monospace"
-        android:hint="@string/user_name"
+        android:hint="@string/mail"
         android:inputType="textPersonName"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
