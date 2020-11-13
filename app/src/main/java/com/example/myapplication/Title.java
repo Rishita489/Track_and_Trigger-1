@@ -29,6 +29,7 @@ public class Title extends AppCompatActivity {
     private static final String TAG = "ABC" ;
     Button register;
     TextView login_btn;
+    Button btn;
     GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
 
@@ -39,6 +40,14 @@ public class Title extends AppCompatActivity {
         setContentView(R.layout.activity_title);
         register = findViewById(R.id.register_button);
         login_btn = findViewById(R.id.login_prompt);
+        btn = findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Reminder.class));
+
+            }
+        });
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
