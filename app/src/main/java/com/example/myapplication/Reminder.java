@@ -52,27 +52,20 @@ public class Reminder extends AppCompatActivity implements TimePickerDialog.OnTi
         Toast.makeText(this,"Reminder Set!",Toast.LENGTH_SHORT).show();
         Calendar calendar = Calendar.getInstance();
         Calendar now = Calendar.getInstance();
-        now.set(Calendar.HOUR_OF_DAY,hourOfDay);
+       now.set(Calendar.HOUR_OF_DAY,hourOfDay);
         now.set(Calendar.MINUTE,minute);
         now.set(Calendar.SECOND,0);
         now.set(Calendar.MILLISECOND,0);
-        if(now.compareTo(calendar) <= 0){
-            now.add(Calendar.DATE, 1);
-        }
+
+
 
 
         AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
-        Intent intent = new Intent(getBaseContext(),ReminderBroadcast.class);
-        PendingIntent pd = PendingIntent.getBroadcast(getBaseContext(),1,intent,PendingIntent.FLAG_UPDATE_CURRENT);
-        assert am != null;
-        am.set(AlarmManager.RTC_WAKEUP,now.getTimeInMillis()/1000,pd);
-
-
-
-
-
-
-
+        Intent intent = new Intent(Reminder.this,ReminderBroadcast.class);
+        PendingIntent pd = PendingIntent.getBroadcast(this,1,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        if (am != null) {
+            am.setExact(AlarmManager.RTC_WAKEUP,now.getTimeInMillis(),pd);
+        }
 
 
     }
