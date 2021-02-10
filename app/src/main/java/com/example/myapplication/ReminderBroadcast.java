@@ -25,7 +25,7 @@ public class ReminderBroadcast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-       /* Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+       /*Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
         Intent notificationIntent = new Intent(context, Reminder.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -45,10 +45,12 @@ public class ReminderBroadcast extends BroadcastReceiver {
             notificationManager.notify(DAILY_REMINDER_REQUEST_CODE, notification);
         }*/
         Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
+        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context.getApplicationContext());
         Notification notification = builder.setContentTitle("Stock Update")
                 .setContentText("Kindly Update your Stock!").setAutoCancel(true)
-               .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
+               .setSmallIcon(R.drawable.ic_add_alert_black_24dp).setSound(alarmSound)
                 .build();
 
 

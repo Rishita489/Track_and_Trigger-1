@@ -40,14 +40,7 @@ public class Title extends AppCompatActivity {
         setContentView(R.layout.activity_title);
         register = findViewById(R.id.register_button);
         login_btn = findViewById(R.id.login_prompt);
-        btn = findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Reminder.class));
 
-            }
-        });
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +67,7 @@ public class Title extends AppCompatActivity {
                 signIn();
             }
         });
+
 
 
 
@@ -124,6 +118,7 @@ public class Title extends AppCompatActivity {
                         // ...
                     }
                 });
+
     }
 
 }

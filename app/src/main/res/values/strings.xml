@@ -26,4 +26,10 @@
     <string name="time">SELECT TIME</string>
     <string name="DATE">SELECT DATE</string>
     <string name="SAVE_BTN">SAVE</string>
+    <string name="reg_title">Regsiter</string>
+    <string name="login_title">Login</string>
+    <string name="sign_title">SIGN - IN</string>
+    <string name="record_me_to">Record Me To</string>
+    <string name="hint">E-mail ID</string>
+    <string name="item_add">ADD ITEM</string>
 </resources>

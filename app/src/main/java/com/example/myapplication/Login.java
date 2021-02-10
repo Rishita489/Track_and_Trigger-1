@@ -54,7 +54,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            if(fAuth.getCurrentUser().isEmailVerified()){
+                            if(Objects.requireNonNull(fAuth.getCurrentUser()).isEmailVerified()){
                                 startActivity(new Intent(Login.this,Dashboard.class) );
                             }
                             else{

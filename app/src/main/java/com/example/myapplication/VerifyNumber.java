@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class VerifyNumber extends AppCompatActivity {
@@ -64,7 +65,7 @@ public class VerifyNumber extends AppCompatActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(VerifyNumber.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(VerifyNumber.this, Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -80,7 +81,7 @@ public class VerifyNumber extends AppCompatActivity {
                 num,
                 60,
                 TimeUnit.SECONDS,
-                (Activity) TaskExecutors.MAIN_THREAD,
+                TaskExecutors.MAIN_THREAD,
                 mCallBack
         );
     }

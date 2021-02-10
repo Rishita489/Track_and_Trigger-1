@@ -4,6 +4,12 @@
     package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+
 
     <application
         android:allowBackup="true"
@@ -12,7 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CreateEvent"></activity>
+        <activity android:name=".AddImg"></activity>
+        <activity android:name=".AddItem" />
+        <activity android:name=".Inventory" />
+        <activity android:name=".Profile2" />
+        <activity android:name=".Profile1" />
+        <activity android:name=".CreateEvent" />
         <activity android:name=".Reminder" />
         <activity android:name=".Dashboard" />
         <activity android:name=".VerifyNumber" />
@@ -33,10 +44,19 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".ReminderBroadcast"
+        <receiver
+            android:name=".ReminderBroadcast"
+            android:enabled="true" />
+        <receiver
+            android:name=".BootUpReceiver"
             android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </receiver>
+        <receiver android:name=".AlarmBrodcast" />
 
         <meta-data
             android:name="preloaded_fonts"
